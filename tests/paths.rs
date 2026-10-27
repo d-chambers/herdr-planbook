@@ -37,7 +37,7 @@ fn bare_repository_is_never_a_project_location() {
     git(&bare, &["worktree", "add", tree.to_str().unwrap(), "main"]);
     assert_eq!(
         paths::repository(Some(&tree), &Environment::new()).unwrap(),
-        tree
+        tree.canonicalize().unwrap()
     );
 }
 #[test]

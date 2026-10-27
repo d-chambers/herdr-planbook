@@ -23,6 +23,7 @@ impl Fixture {
         let root = temp.path().join("repo");
         let state = temp.path().join("state");
         fs::create_dir(&root).unwrap();
+        let root = root.canonicalize().unwrap();
         git(&root, &["init", "-b", "main"]);
         git(&root, &["config", "core.excludesFile", "/dev/null"]);
         Self {
