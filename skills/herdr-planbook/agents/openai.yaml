@@ -1,0 +1,4 @@
+interface:
+  display_name: "Herdr Planbook"
+  short_description: "Maintain discoverable repository project plans"
+  default_prompt: "Use $herdr-planbook to find this repository's project plans and update the current project's remaining work and next action."

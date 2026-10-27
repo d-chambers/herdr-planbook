@@ -1,0 +1,21 @@
+id = "dchambers.planbook"
+name = "Planbook"
+version = "0.1.0"
+min_herdr_version = "0.9.1"
+description = "Browse and maintain repository project plans"
+platforms = ["linux", "macos"]
+
+[[build]]
+command = ["cargo", "build", "--release", "--locked"]
+
+[[actions]]
+id = "open"
+title = "Open project plans"
+contexts = ["workspace"]
+command = ["target/release/planbook", "open"]
+
+[[panes]]
+id = "projects"
+title = "Project plans"
+placement = "split"
+command = ["target/release/planbook", "ui"]
